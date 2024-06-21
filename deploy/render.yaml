@@ -1,0 +1,22 @@
+# Exported from Render on 2024-06-21T08:10:45Z
+services:
+- type: web
+  name: movie8-nginx:1.0
+  runtime: image
+  image:
+    url: docker.io/rekam/movie8-nginx:1.0
+  plan: free
+  envVars:
+  - key: PHP_FPM_PORT
+    sync: false
+  - key: PHP_FPM_SERVICE
+    sync: false
+  region: singapore
+- type: web
+  name: movie8-php-fpm:1.0
+  runtime: image
+  image:
+    url: docker.io/rekam/movie8-php-fpm:1.0
+  plan: free
+  region: singapore
+version: "1"

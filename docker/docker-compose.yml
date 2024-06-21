@@ -1,0 +1,31 @@
+services:
+  movie8-php-fpm:
+    platform: linux/amd64
+    build:
+      context: ../  # 將構建上下文設置為專案根目錄
+      dockerfile: docker/php-fpm/Dockerfile
+    container_name: movie8-php-fpm
+    working_dir: /var/www/movie8
+    volumes:
+      - ../cakephp:/var/www/movie8
+      - ./php-fpm/php-ini-overrides.ini:/etc/php/8.2/fpm/conf.d/99-overrides.ini
+  movie8-nginx:
+    platform: linux/amd64
+    build: 
+      context: ../
+      dockerfile: docker/nginx/Dockerfile
+    container_name: movie8-nginx
+    working_dir: /var/www/movie8
+    volumes:
+        - ../cakephp:/var/www/movie8
+        - ./nginx/nginx.conf:/etc/nginx/conf.d/default.conf
+    ports:
+     - "8180:80"
+
+
+
+# docker tag docker-movie8-php-fpm:latest rekam/movie8-php-fpm:1.0
+# docker push rekam/movie8-php-fpm:1.0
+
+# docker tag docker-movie8-nginx:latest rekam/movie8-nginx:1.0
+# docker push rekam/movie8-nginx:1.0
