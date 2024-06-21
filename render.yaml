@@ -1,7 +1,7 @@
 # Exported from Render on 2024-06-21T08:10:45Z
 services:
 - type: web
-  name: movie8-nginx:1.0
+  name: movie8-nginx
   runtime: image
   image:
     url: docker.io/rekam/movie8-nginx:1.0
@@ -12,7 +12,7 @@ services:
       value: 80
 
 - type: web
-  name: movie8-php-fpm:1.0
+  name: movie8-php-fpm
   runtime: image
   image:
     url: docker.io/rekam/movie8-php-fpm:1.0
