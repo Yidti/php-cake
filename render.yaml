@@ -6,12 +6,11 @@ services:
   image:
     url: docker.io/rekam/movie8-nginx:1.0
   plan: free
-  envVars:
-  - key: PHP_FPM_PORT
-    sync: false
-  - key: PHP_FPM_SERVICE
-    sync: false
   region: singapore
+  envVars:
+    - key: PORT
+      value: 80
+
 - type: web
   name: movie8-php-fpm:1.0
   runtime: image
@@ -19,4 +18,7 @@ services:
     url: docker.io/rekam/movie8-php-fpm:1.0
   plan: free
   region: singapore
+  envVars:
+    - key: PORT
+      value: 9000
 version: "1"
