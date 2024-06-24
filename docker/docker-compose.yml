@@ -22,8 +22,6 @@ services:
     ports:
      - "8180:80"
 
-
-
 # docker tag docker-movie8-php-fpm:latest rekam/movie8-php-fpm:1.0
 # docker push rekam/movie8-php-fpm:1.0
 
