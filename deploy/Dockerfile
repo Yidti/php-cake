@@ -9,6 +9,10 @@ FROM richarvey/nginx-php-fpm:3.1.6
 
 WORKDIR /var/www/html/movie8/
 
+RUN mkdir -p logs \
+    && chown -R www-data:www-data logs \
+    && chmod -R 755 logs
+
 COPY cakephp /var/www/html/movie8
 COPY deploy/nginx.conf /etc/nginx/sites-available/default.conf
 # COPY deploy/nginx.conf /etc/nginx/nginx.conf
