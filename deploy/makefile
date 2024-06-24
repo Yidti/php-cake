@@ -6,7 +6,7 @@ VERSION := latest
 
 # ------------------------------------------------------------------------------
 
-all: build
+all: rebuild run
 
 # 建置 image
 build:
