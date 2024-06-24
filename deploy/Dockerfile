@@ -14,3 +14,4 @@ COPY deploy/nginx.conf /etc/nginx/sites-available/default.conf
 # COPY deploy/nginx.conf /etc/nginx/nginx.conf
 
 # COPY deploy/php-ini-overrides.ini /etc/php/8.2/fpm/conf.d/99-overrides.ini
+CMD ["/start.sh"]
